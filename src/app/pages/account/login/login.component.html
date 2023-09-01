@@ -1,48 +1,33 @@
-<div class="weather-container">
+<div class="container">
   <div class="navbar">
-
-  </div>
-  <div class="search">
-    <app-search-drop-down
-      [multiple]="false"
-      [notFoundText]="'City Not Found'"
-      [placeholder]="'Search Weather'"
-      [bindLabel]="'name'"
-      [bindValue]="'coord'"
-
-    >
-    </app-search-drop-down>
+  <span>کنترل هوشمند بر پایه IOT</span>
   </div>
   <div  class="content">
-    <div class="curent">
-      <div class="curent-item d-0">
-
-
-        <div fxLayout="row" fxLayoutAlign="center center">
-          <mat-card>
+    <div class="card-login">
+          <mat-card class="item">
             <mat-card-header>
-              <mat-card-title>Log in</mat-card-title>
+              <mat-card-title>ورود به سامانه</mat-card-title>
             </mat-card-header>
-
-          <form [formGroup]="loginForm" (ngSubmit)="submitLoginForm()" class="form form-inline example-form">
-
-              <mat-card-content>
-                <mat-form-field class="example-full-width">
-                  <input type="text" tabindex="1"  matInput placeholder="کد موقع ثبت نام را وارد کنید" formControlName="registerCode">
-                </mat-form-field>
-              </mat-card-content>
-              <button mat-stroked-button color="accent" class="btn-block">ورود</button>
-            </form>
+            <mat-card-content>
+              <form class="example-form" [formGroup]="loginForm">
+                <table class="example-full-width" cellspacing="0">
+                  <tr>
+                    <td>
+                      <mat-form-field class="example-full-width">
+                      <input matInput placeholder="کد ثبت وارد کنید"  name="username" required>
+                      </mat-form-field>
+                    </td>
+                  </tr>
+              </table>
+              </form>
+            </mat-card-content>
+            <mat-card-actions>
+              <mat-card-actions>
+                <button md-raised-button class="btn" (click)="login()">Login</button>
+              </mat-card-actions>
+            </mat-card-actions>
           </mat-card>
         </div>
-
-      </div>
-      <div class="curent-item center-item">
-      </div>
-      <div class="curent-item align-end d-0">
       </div>
     </div>
-
-  </div>
-</div>
 

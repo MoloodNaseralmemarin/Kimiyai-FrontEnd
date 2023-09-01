@@ -11,21 +11,18 @@ import { Router } from '@angular/router';
 
 export class LoginComponent {
 
-  public loginForm: FormGroup;
+  loginForm: FormGroup;
   constructor(
     private router: Router
 
   ) {
   }
   ngOnInit(): void {
+    this.createForm();
+
+  }
+  private createForm(){
     this.loginForm = new FormGroup({
-      firstName: new FormControl(
-        null,
-        [
-          Validators.required,
-          Validators.maxLength(100)
-        ]
-      ),
       registerCode: new FormControl(null,
         [
           Validators.required,
@@ -34,9 +31,8 @@ export class LoginComponent {
     });
   }
 
-  submitLoginForm() {
-
-        this.router.navigate(['/AdminPanel']);
-      }
+  public login() {
+    this.router.navigate(['/AdminPanel']);
+  }
     }
 
